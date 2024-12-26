@@ -21,7 +21,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {{-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -40,7 +40,7 @@
                             <li><a class="dropdown-item" href="#">Tidur</a></li>
                         </ul>
                     </li>
-                </ul>
+                </ul> --}}
                 <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
                     @guest
@@ -79,14 +79,20 @@
 
     <!-- Konten -->
     <!-- Welcome Section -->
-    <header class="bg-primary text-white p-4 text-center mb-4" style="height:50vh">
-        <div class="d-flex justify-content-center align-items-center mb-3">
-            <img src="profile.png" alt="User Profile" class="rounded-circle" style="width: 50px; height: 50px;">
-            <span class="ms-3">Arig X Lisa</span>
+    <header class="bg-primary text-white p-4 text-center  mb-4" style="height:50vh">
+
+        <div class="col-md-6 justify-content-center align-items-center">
+            <div class="justify-content-center align-items-center mb-3 ">
+                <h1>Gimana Hari Mu?</h1>
+                <p>Ingat, kamu tidak sendirian dalam menghadapi hari-harimu.</p>
+            </div>
         </div>
-        <h1>Gimana Hari Mu?</h1>
-        <p>Ingat, kamu tidak sendirian dalam menghadapi hari-harimu.</p>
+        <div class="col-md-6">
+            <!-- apalah ini -->
+        </div>
+
     </header>
+
     <!-- Welcome Section end -->
     <div class="container my-4">
 
