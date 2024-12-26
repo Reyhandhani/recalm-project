@@ -19,25 +19,37 @@
                     style="width: 150px; height: auto;">
                 <!-- <h1 class="text-primary fw-bold mb-4">RECALM</h1> -->
                 <h2 class="fs-5 fw-bold mb-4">Create Account</h2>
-                <form class="w-75">
+                <form method="POST" action="{{ route('register') }}" class="w-75">
+                    @csrf
                     <div class="mb-3">
                         <label for="fullname" class="form-label fw-bold">Full Name</label>
-                        <input type="text" class="form-control" id="fullname" placeholder="Enter your full name">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="fullname" name="name"
+                            placeholder="Enter your full name" value="{{ old('name') }}" required>
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label fw-bold">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
+                            placeholder="Enter your email" value="{{ old('email') }}" required>
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label fw-bold">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div>
-                            <input type="checkbox" id="rememberMe">
-                            <label for="rememberMe" class="form-label">Remember me</label>
-                        </div>
-                        <a href="#" class="text-decoration-none">Forgot password?</a>
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password"
+                            placeholder="Enter your password" required>
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary w-100 mb-3">Create</button>
                     <div class="d-flex align-items-center my-4">
@@ -46,17 +58,19 @@
                         <hr class="flex-grow-1">
                     </div>
                     <div class="d-flex justify-content-center gap-5">
-                        <button class="btn btn-light border"><img src="{{ Vite::asset('resources/images/google.png') }}"
-                                alt="Google" width="40"></button>
-                        <button class="btn btn-light border"><img
-                                src="{{ Vite::asset('resources/images/facebook.png') }}" alt="Facebook"
-                                width="40"></button>
+                        <button type="button" class="btn btn-light border">
+                            <img src="{{ Vite::asset('resources/images/google.png') }}" alt="Google" width="40">
+                        </button>
+                        <button type="button" class="btn btn-light border">
+                            <img src="{{ Vite::asset('resources/images/facebook.png') }}" alt="Facebook" width="40">
+                        </button>
                     </div>
                     <br>
-                    <p class="d-flex justify-content-center">Sudah punya akun? <a href="Login.html"
-                            class="text-decoration-none">Login</a></p>
+                    <p class="d-flex justify-content-center">Sudah punya akun?
+                        <a href="{{ route('login') }}" class="text-decoration-none">Login</a>
+                    </p>
+                </form>
             </div>
-            </form>
 
             <!--Right Side-->
             <div class="col-lg-6 d-flex flex-column justify-content-center align-items-start"

@@ -42,13 +42,6 @@
                         </span>
                         @enderror
                     </div>
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div>
-                            <input type="checkbox" id="rememberMe" name="remember">
-                            <label for="rememberMe" class="form-label">Remember me</label>
-                        </div>
-                        <a href="{{ route('password.request') }}" class="text-decoration-none">Forgot password?</a>
-                    </div>
                     <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
                     <div class="d-flex align-items-center my-4">
                         <hr class="flex-grow-1">
@@ -63,6 +56,10 @@
                             <img src="{{ Vite::asset('resources/images/facebook.png') }}" alt="Facebook" width="40">
                         </button>
                     </div>
+                    <br>
+                    <p class="d-flex justify-content-center">Belum punya akun?
+                        <a href="{{ route('register') }}" class="text-decoration-none">Register</a>
+                    </p>
                 </form>
             </div>
 
