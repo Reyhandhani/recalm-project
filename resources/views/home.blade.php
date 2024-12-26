@@ -12,9 +12,9 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">RECALM</a>
+            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ Vite::asset('resources/images/recalm.png') }}" alt="logo-recalm"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -41,27 +41,54 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
+                <ul class="navbar-nav ms-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{{ route('profile') }}" class="dropdown-item"><i class="bi-person-circle me-1"></i> My
+                                    Profile</a>
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();"><i
+                                        class="bi bi-lock-fill"></i>
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
             </div>
         </div>
     </nav>
     <!-- Navbar end -->
 
     <!-- Konten -->
+    <!-- Welcome Section -->
+    <header class="bg-primary text-white p-4 text-center mb-4" style="height:50vh">
+        <div class="d-flex justify-content-center align-items-center mb-3">
+            <img src="profile.png" alt="User Profile" class="rounded-circle" style="width: 50px; height: 50px;">
+            <span class="ms-3">Arig X Lisa</span>
+        </div>
+        <h1>Gimana Hari Mu?</h1>
+        <p>Ingat, kamu tidak sendirian dalam menghadapi hari-harimu.</p>
+    </header>
+    <!-- Welcome Section end -->
     <div class="container my-4">
-        <!-- Welcome Section -->
-        <header class="bg-primary text-white rounded-3 p-4 text-center mb-4">
-            <div class="d-flex justify-content-center align-items-center mb-3">
-                <img src="profile.png" alt="User Profile" class="rounded-circle" style="width: 50px; height: 50px;">
-                <span class="ms-3">Arig X Tery</span>
-            </div>
-            <h1>Gimana Hari Mu?</h1>
-            <p>Ingat, kamu tidak sendirian dalam menghadapi hari-harimu.</p>
-        </header>
-        <!-- Welcome Section end -->
 
         <!-- Mood Buttons -->
         <section>
