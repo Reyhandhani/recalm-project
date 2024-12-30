@@ -30,3 +30,35 @@ footer {
     margin-top: auto; /* Pastikan footer selalu berada di bawah */
 }
 
+.sidebar {
+    padding: 40px;
+    height: 100vh;
+}
+
+.sidebar a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    font-size: 17px;
+}
+
+.sidebar a:hover {
+    color: #007bff;
+}
+
+.sidebar a.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.sidebar i {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+        padding: 0;
+    }
+}
