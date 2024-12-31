@@ -131,15 +131,16 @@
                 <!-- Card 1 -->
                 <div class="col-12 col-md-4">
                     <div class="card h-100">
-                        <img src="dummy.jpg" class="card-img-top" alt="Artikel 1">
+                        <img src="{{ Vite::asset('resources/images/card1.png') }}" class="card-img-top fixed-image" alt="Artikel 1">
+
                         <div class="card-body">
-                            <h6 class="text-muted">Kategori</h6>
-                            <h5 class="card-title">Judul Artikel 1</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor...</p>
+                            <h6 class="text-muted">English</h6>
+                            <h5 class="card-title"><b>Understanding your mental health and looking after others</b></h5>
+                            <p class="card-text">Data from AIHW Australian Institute of Health...</p>
                         </div>
                         <div class="card-footer d-flex justify-content-between align-items-center bg-primary">
-                            <small class="text-white">Tanggal</small>
-                            <a href="#" class="btn btn-outline-primary btn-sm bg-light text-primary">Lebih lengkap</a>
+                            <small class="text-white">October 13, 2022</small>
+                            <a href="https://www.sixdegreesexecutive.com.au/your-career/understanding-your-mental-health" class="btn btn-outline-primary btn-sm bg-light text-primary">Lebih lengkap</a>
                         </div>
                     </div>
                 </div>
@@ -147,15 +148,15 @@
                 <!-- Card 2 -->
                 <div class="col-12 col-md-4">
                     <div class="card h-100">
-                        <img src="dummy.jpg" class="card-img-top" alt="Artikel 2">
+                        <img src="{{ Vite::asset('resources/images/card2.png') }}" class="card-img-top fixed-image" alt="Artikel 2">
                         <div class="card-body">
-                            <h6 class="text-muted">Kategori</h6>
-                            <h5 class="card-title">Judul Artikel 2</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor...</p>
+                            <h6 class="text-muted">Indonesia</h6>
+                            <h5 class="card-title"><b>Mengenali Definisi Tepat dari Kesehatan Mental dan Dampaknya</b></h5>
+                            <p class="card-text">Jakarta Setiap tahun, dunia memperingati Hari Kesehatan...</p>
                         </div>
                         <div class="card-footer d-flex justify-content-between align-items-center bg-primary">
-                            <small class="text-white">Tanggal</small>
-                            <a href="#" class="btn btn-outline-primary btn-sm bg-light text-primary">Lebih lengkap</a>
+                            <small class="text-white">Mei 26, 2023</small>
+                            <a href="https://www.halodoc.com/artikel/mengenali-definisi-tepat-dari-kesehatan-mental-dan-dampaknya" class="btn btn-outline-primary btn-sm bg-light text-primary">Lebih lengkap</a>
                         </div>
                     </div>
                 </div>
@@ -163,15 +164,15 @@
                 <!-- Card 3 -->
                 <div class="col-12 col-md-4">
                     <div class="card h-100">
-                        <img src="dummy.jpg" class="card-img-top" alt="Artikel 3">
+                        <img src="{{ Vite::asset('resources/images/card3.png') }}" class="card-img-top fixed-image" alt="Artikel 3">
                         <div class="card-body">
-                            <h6 class="text-muted">Kategori</h6>
-                            <h5 class="card-title">Judul Artikel 3</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor...</p>
+                            <h6 class="text-muted">English</h6>
+                            <h5 class="card-title"><b>Building an international mental health support group for people in science</b></h5>
+                            <p class="card-text">Jaishree Subrahmanium is a botanist who did her PhD...</p>
                         </div>
                         <div class="card-footer d-flex justify-content-between align-items-center bg-primary">
-                            <small class="text-white">Tanggal</small>
-                            <a href="#" class="btn btn-outline-primary btn-sm bg-light text-primary">Lebih lengkap</a>
+                            <small class="text-white">March 04, 2021</small>
+                            <a href="https://indiabioscience.org/columns/conversations/building-an-international-mental-health-support-group-for-people-in-science" class="btn btn-outline-primary btn-sm bg-light text-primary">Lebih lengkap</a>
                         </div>
                     </div>
                 </div>

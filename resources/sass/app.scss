@@ -62,3 +62,10 @@ footer {
         padding: 0;
     }
 }
+
+.fixed-image {
+    width: 100%; /* Gambar mengisi lebar kartu */
+    height: 200px; /* Tinggi tetap untuk semua gambar */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+    object-position: center; /* Fokus gambar tetap di tengah */
+}
