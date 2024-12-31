@@ -98,7 +98,7 @@
                 </div>
                 <!-- Other Buttons -->
                 <div class="col-12 col-md-6">
-                    <button class="btn btn-primary w-100 py-3">Daily Notes</button>
+                   <a href="{{ route('notes') }}"> <button class="btn btn-primary w-100 py-3">Daily Notes</button></a>
                 </div>
                 <div class="col-12 col-md-6">
                     <button class="btn btn-primary w-100 py-3">Perlu Teman Cerita?</button>

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\NoteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +24,10 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 
 Route::get('/', function () {
     return view('auth.login');
+
 });
 
+Route::post('/store', [NoteController::class, 'store'])->name('store');
 Route::get('home', [HomeController::class, 'index'])->name('home');
 
 Route::get('profile', ProfileController::class)->name('profile');
@@ -31,6 +35,9 @@ Route::get('profile', ProfileController::class)->name('profile');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/notes', [App\Http\Controllers\HomeController::class, 'notes'])->name('notes');
+Route::post('/store', [App\Http\Controllers\HomeController::class, 'store']);
 
 Route::get('/register', function () {
     return view('auth.register');
