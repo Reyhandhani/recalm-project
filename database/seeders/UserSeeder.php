@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('adminadmin'), // Enkripsi password dengan bcrypt
             'created_at' => now(),
             'updated_at' => now(),
+            'photo' => null,
         ]);
     }
 }

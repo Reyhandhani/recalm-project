@@ -35,6 +35,10 @@
                     <li class="nav-item dropdown fw-bold">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
                             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
+                            alt="Profile photo"
+                            class="rounded-circle"
+                            style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
                             {{ Auth::user()->name }}
                         </a>
 
@@ -136,7 +140,7 @@
                         <div class="col-md-2">
                             <!-- Tambahkan ID 'profilePreview' untuk mengganti gambar dengan JavaScript -->
                             <img id="profilePreview"
-                                 src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
+                                 src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images\default_profile.png') }}"
                                  alt="Profile photo"
                                  class="profile-photo">
                         </div>
