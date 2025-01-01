@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '392e5923243b84a93684e53b69140c689eda1950',
+        'reference' => 'f572e4aeb57661979fdc34a50101c9f2e6b089dd',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(
@@ -12,6 +12,15 @@
         'dev' => true,
     ),
     'versions' => array(
+        'arielmejiadev/larapex-charts' => array(
+            'pretty_version' => '8.1.0',
+            'version' => '8.1.0.0',
+            'reference' => '5461a65f730c66735599e142e384d2689209eedf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../arielmejiadev/larapex-charts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.12.1',
             'version' => '0.12.1.0',
@@ -384,7 +393,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '392e5923243b84a93684e53b69140c689eda1950',
+            'reference' => 'f572e4aeb57661979fdc34a50101c9f2e6b089dd',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(
@@ -770,8 +779,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(

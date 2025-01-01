@@ -14,4 +14,5 @@ class notes extends Model
         // Kolom-kolom yang dapat diisi (fillable)
         protected $fillable = ['Note', 'Mood'];
 
+
 }
