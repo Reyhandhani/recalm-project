@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\RiviewController;
+use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\UserProfileController;
 
 /*
@@ -57,3 +59,6 @@ Route::post('/register', [RegisteredUserController::class, 'store'])->name('regi
 
 Route::post('/profile/update', [UserProfileController::class, 'update'])->name('profile.update');
 Route::post('/profile/update', [UserProfileController::class, 'update'])->middleware('auth')->name('profile.update');
+
+Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik');
+Route::get('/riview', [RiviewController::class, 'index'])->name('riview');

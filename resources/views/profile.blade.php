@@ -68,11 +68,10 @@
                 <h4 class="fw-bold">Pengaturan</h4>
                 <nav class="nav flex-column">
                     <a class="nav-link" href="#"><i class="fas fa-user"></i>Profile</a>
-                    <a class="nav-link" href="#"><i class="fas fa-id-card"></i>Statistik Mood</a>
-                    <a class="nav-link" href="#"><i class="fas fa-link"></i>button opsional</a>
-                    <a class="nav-link" href="#"><i class="fas fa-user-cog"></i>button opsional</a>
+                    <a class="nav-link" href="{{ route('statistik')}}"><i class="fas fa-chart-bar"></i>Statistik Mood</a>
+                    <a class="nav-link" href="{{ route('riview')}}"><i class="fas fa-user-cog"></i>Riview Note</a>
                     <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>button opsional</a>
-                    <a class="nav-link" href="#"><i class="fas fa-chart-bar"></i>Statistik Mood</a>
+
 
                     <!-- Tombol Logout -->
                     <a class="nav-link text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form-sidebar').submit();">
@@ -94,9 +93,8 @@
                 <div class="collapse" id="sidebarNav">
                     <nav class="nav flex-column sidebar">
                         <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
-                        <a class="nav-link" href="#"><i class="fas fa-id-card"></i>Statistik Mood</a>
-                        <a class="nav-link" href="#"><i class="fas fa-link"></i>button opsional</a>
-                        <a class="nav-link" href="#"><i class="fas fa-user-cog"></i>button opsional</a>
+                        <a class="nav-link" href="{{ route('statistik')}}"><i class="fas fa-id-card"></i>Statistik Mood</a>
+                        <a class="nav-link" href="{{ route('riview')}}"><i class="fas fa-user-cog"></i>Riview note</a>
                         <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>button opsional</a>
                         <a class="nav-link" href="#"><i class="fas fa-id-card"></i>Statistik Mood</a>
 

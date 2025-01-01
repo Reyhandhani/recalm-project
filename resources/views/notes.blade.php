@@ -70,7 +70,7 @@
                     @csrf
                     <div class="mb-3 text-center">
                       <label for="note" class="form-label" style="font-size: 30px"><b>Ceritain Hari Kamu</b></label>
-                      <textarea class="form-control" id="note-field" name="note-field" rows="10" placeholder="Keluarkan semuanya yaa!!" style="font-size: 20px"></textarea>
+                      <textarea class="form-control" id="note-field" name="note-field" rows="10" placeholder="Silahkan apa yang kamu rasakan hari ini" style="font-size: 20px"></textarea>
                       <!--MOOD-->
                       <br>
                       <label for="mood"style="font-size: 20px"><b> Mood</b></label>
