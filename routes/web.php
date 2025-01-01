@@ -3,13 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\EmployeeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\NoteController;
-
+use App\Http\Controllers\UserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +46,12 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('logout');
+
 Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
+
+Route::post('/profile/update', [UserProfileController::class, 'update'])->name('profile.update');
+Route::post('/profile/update', [UserProfileController::class, 'update'])->middleware('auth')->name('profile.update');

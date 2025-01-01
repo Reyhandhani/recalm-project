@@ -38,8 +38,8 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a href="{{ route('home') }}" class="dropdown-item">
-                                    Home
+                                <a href="{{ route('profile') }}" class="dropdown-item">
+                                    Profile
                                     <i class="bi-person-circle me-1"></i>
                                 </a>
                                 <a class="dropdown-item text-danger" href="{{ route('logout') }}"

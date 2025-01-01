@@ -69,3 +69,10 @@ footer {
     object-fit: cover; /* Memastikan gambar tetap proporsional */
     object-position: center; /* Fokus gambar tetap di tengah */
 }
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+}
