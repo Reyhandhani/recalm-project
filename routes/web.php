@@ -26,7 +26,6 @@ Route::get('/', function () {
 
 });
 
-Route::post('/store', [NoteController::class, 'store'])->name('store');
 Route::get('home', [HomeController::class, 'index'])->name('home');
 
 Route::get('profile', ProfileController::class)->name('profile');
@@ -36,6 +35,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/notes', [App\Http\Controllers\HomeController::class, 'notes'])->name('notes');
+
+Route::post('/notes', [NoteController::class, 'store'])->name('note.store');
+
 Route::post('/store', [App\Http\Controllers\HomeController::class, 'store']);
 
 Route::get('/register', function () {

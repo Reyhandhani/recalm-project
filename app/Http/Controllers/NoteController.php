@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\notes;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Note;
+
 
 class NoteController extends Controller
 {
@@ -33,8 +35,22 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
+        // Validasi input
+        $request->validate([
+            'note-field' => 'required|string',
+            'mood' => 'required',
+        ]);
 
+        // Simpan data ke database
+        $note = new Notes();
+        $note->note = $request->input('note-field');
+        $note->mood = $request->input('mood');
+        $note->save();
+
+
+        return redirect()->route('home')->with('success', 'Data berhasil disimpan!');
     }
+
 
     /**
      * Display the specified resource.

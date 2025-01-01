@@ -66,22 +66,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 bg-white d-none d-md-block sidebar ">
-                <form action="/store" method="POST">
+                <form action="{{ route('note.store') }}" method="POST">
+                    @csrf
                     <div class="mb-3 text-center">
                       <label for="note" class="form-label" style="font-size: 30px"><b>Ceritain Hari Kamu</b></label>
-                      <textarea class="form-control" id="note-field" rows="10" placeholder="Keluarkan semuanya yaa!!" style="font-size: 20px"></textarea>
+                      <textarea class="form-control" id="note-field" name="note-field" rows="10" placeholder="Keluarkan semuanya yaa!!" style="font-size: 20px"></textarea>
                       <!--MOOD-->
                       <br>
-                      <label for="kategori"style="font-size: 20px"><b> Mood</b></label>
-                      <select name="kategori" id="kategori" class="form-control" style="font-size: 20px; height: 60px;">
+                      <label for="mood"style="font-size: 20px"><b> Mood</b></label>
+                      <select name="mood" id="mood" class="form-control" style="font-size: 20px; height: 60px;">
                           <option value="Sedih">Sedih</option>
                           <option value="Senang">Senang</option>
                           <option value="Marah">Marah</option>
                           <div id="emailHelp" class="form-text" style="font-size:15px">Tenang..Cerita kamu bakal aman kok!</div>
                         </select>
                     </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size:25px; ">Simpan Catatan</button>
                 </form>
-                <button type="submit" class="btn btn-primary" style="width: 100%; font-size:25px; ">Simpan Catatan</button>
             </div>
 
         </div>
