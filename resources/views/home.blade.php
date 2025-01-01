@@ -34,6 +34,10 @@
                         <li class="nav-item dropdown fw-bold">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
                                 role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
+                                alt="Profile photo"
+                                class="rounded-circle"
+                                style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -62,28 +66,20 @@
 
     <!-- Konten -->
     <!-- Welcome Section -->
-    <header class="container-fluid col-md-12 d-flex justify-content-center align-items-center bg-primary text-white  text-center  mb-4" style="height:50vh">
+<header class="container-fluid bg-primary text-white text-center mb-4">
+    <div class="row d-flex align-items-center" style="min-height: 50vh;">
+        <!-- Bagian Kiri -->
+        <div class="col-12 col-md-6 text-center mb-4 mb-md-0">
+            <h1 class="mb-3">Gimana Hari Mu?</h1>
+            <h3>Ingat, kamu tidak sendirian dalam menghadapi hari-harimu.</h3>
+        </div>
 
-        {{-- <div class="container d-flex justify-content-center align-items-center" style="height: 50vh;"> --}}
-
-                <!-- Bagian Kiri -->
-                <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
-                    <div class="mb-3 text-center" style="font-size: 1.5rem">
-                        <h1>Gimana Hari Mu?</h1>
-                        <p>Ingat, kamu tidak sendirian dalam menghadapi hari-harimu.</p>
-                    </div>
-                </div>
-
-                <!-- Bagian Kanan -->
-                <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
-                    <div class="mb-4 text-center">
-                        <img src="{{ Vite::asset('resources/images/utama.png') }}" alt="utama" style="height:50vh">
-                    </div>
-                </div>
-
-        {{-- </div> --}}
-
-    </header>
+        <!-- Bagian Kanan -->
+        <div class="col-12 col-md-6">
+            <img src="{{ Vite::asset('resources/images/utama.png') }}" alt="utama" class="img-fluid" style="max-height: 50vh;">
+        </div>
+    </div>
+</header>
 
     <!-- Welcome Section end -->
     <div class="container my-4">
