@@ -3,7 +3,11 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
+<<<<<<< HEAD
         'reference' => 'fec70538352dff83c71f70f1b2bfdeb730e11b7b',
+=======
+        'reference' => 'a150ad3771e0dc63e6a894862d224ca771c6d5c0',
+>>>>>>> origin/fitur-profile
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(
@@ -393,7 +397,11 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
+<<<<<<< HEAD
             'reference' => 'fec70538352dff83c71f70f1b2bfdeb730e11b7b',
+=======
+            'reference' => 'a150ad3771e0dc63e6a894862d224ca771c6d5c0',
+>>>>>>> origin/fitur-profile
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(
