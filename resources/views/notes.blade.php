@@ -22,7 +22,6 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
                     @guest
@@ -35,18 +34,22 @@
                         <li class="nav-item dropdown fw-bold">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
                                 role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
+                                alt="Profile photo"
+                                class="rounded-circle"
+                                style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a href="{{ route('home') }}" class="dropdown-item">
-                                    Home
+                            <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{{ route('profile') }}" class="dropdown-item">
+                                    Profile
                                     <i class="bi-person-circle me-1"></i>
                                 </a>
                                 <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    <i class="bi bi-lock-fill"></i>
+                                                 document.getElementById('logout-form').submit();"><i
+                                        class="bi bi-lock-fill"></i>
                                     {{ __('Logout') }}
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -70,19 +73,24 @@
                     <form action="{{ route('note.store') }}" method="POST">
                         @csrf
                         <div class="mb-3 text-center">
-                            <label for="note" class="form-label" style="font-size: 30px"><b>Ceritain Hari Kamu</b></label>
-                            <textarea class="form-control" id="note-field" name="note-field" rows="10" placeholder="Silahkan apa yang kamu rasakan hari ini" style="font-size: 20px"></textarea>
+                            <label for="note" class="form-label" style="font-size: 30px"><b>Ceritain Hari
+                                    Kamu</b></label>
+                            <textarea class="form-control" id="note-field" name="note-field" rows="10"
+                                placeholder="Silahkan apa yang kamu rasakan hari ini" style="font-size: 20px"></textarea>
                             <!--MOOD-->
                             <br>
                             <label for="mood" style="font-size: 20px"><b> Mood</b></label>
-                            <select name="mood" id="mood" class="form-control" style="font-size: 20px; height: 60px;">
+                            <select name="mood" id="mood" class="form-control"
+                                style="font-size: 20px; height: 60px;">
                                 <option value="Sedih">Sedih</option>
                                 <option value="Senang">Senang</option>
                                 <option value="Marah">Marah</option>
                             </select>
-                            <div id="emailHelp" class="form-text" style="font-size:15px">Tenang.. Cerita kamu bakal aman kok!</div>
+                            <div id="emailHelp" class="form-text" style="font-size:15px">Tenang.. Cerita kamu bakal aman
+                                kok!</div>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100" style="font-size:25px;">Simpan Catatan</button>
+                        <button type="submit" class="btn btn-primary w-100" style="font-size:25px;">Simpan
+                            Catatan</button>
                     </form>
                 </div>
             </div>
@@ -95,11 +103,14 @@
         <div class="container">
             <p class="mb-1">&copy; 2024 RECALM. All Rights Reserved.</p>
             <ul class="list-inline mb-0">
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Privacy
+                        Policy</a></li>
                 <li class="list-inline-item">|</li>
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Terms of
+                        Service</a></li>
                 <li class="list-inline-item">|</li>
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Contact Us</a>
+                </li>
             </ul>
             <div class="mt-3">
                 <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
@@ -110,8 +121,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

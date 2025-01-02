@@ -35,6 +35,9 @@
                     <li class="nav-item dropdown fw-bold">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
                             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
+                                alt="Profile photo" class="rounded-circle"
+                                style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
                             {{ Auth::user()->name }}
                         </a>
 
@@ -68,13 +71,15 @@
                 <h4 class="fw-bold">Pengaturan</h4>
                 <nav class="nav flex-column">
                     <a class="nav-link" href="#"><i class="fas fa-user"></i>Profile</a>
-                    <a class="nav-link" href="{{ route('statistik')}}"><i class="fas fa-chart-bar"></i>Statistik Mood</a>
-                    <a class="nav-link" href="{{ route('riview')}}"><i class="fas fa-user-cog"></i>Riview Note</a>
+                    <a class="nav-link" href="{{ route('statistik') }}"><i class="fas fa-chart-bar"></i>Statistik
+                        Mood</a>
+                    <a class="nav-link" href="{{ route('riview') }}"><i class="fas fa-user-cog"></i>Riview Note</a>
                     <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>button opsional</a>
 
 
                     <!-- Tombol Logout -->
-                    <a class="nav-link text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form-sidebar').submit();">
+                    <a class="nav-link text-danger" href="#"
+                        onclick="event.preventDefault(); document.getElementById('logout-form-sidebar').submit();">
                         <i class="fas fa-sign-out-alt"></i> Logout Account
                     </a>
                     <!-- Form Logout -->
@@ -93,13 +98,15 @@
                 <div class="collapse" id="sidebarNav">
                     <nav class="nav flex-column sidebar">
                         <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
-                        <a class="nav-link" href="{{ route('statistik')}}"><i class="fas fa-id-card"></i>Statistik Mood</a>
-                        <a class="nav-link" href="{{ route('riview')}}"><i class="fas fa-user-cog"></i>Riview note</a>
+                        <a class="nav-link" href="{{ route('statistik') }}"><i class="fas fa-id-card"></i>Statistik
+                            Mood</a>
+                        <a class="nav-link" href="{{ route('riview') }}"><i class="fas fa-user-cog"></i>Riview note</a>
                         <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>button opsional</a>
                         <a class="nav-link" href="#"><i class="fas fa-id-card"></i>Statistik Mood</a>
 
                         <!-- Tombol Logout -->
-                        <a class="nav-link text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form-mobile').submit();">
+                        <a class="nav-link text-danger" href="#"
+                            onclick="event.preventDefault(); document.getElementById('logout-form-mobile').submit();">
                             <i class="fas fa-sign-out-alt"></i> Logout Account
                         </a>
                         <!-- Form Logout -->
@@ -134,16 +141,18 @@
                         <div class="col-md-2">
                             <!-- Tambahkan ID 'profilePreview' untuk mengganti gambar dengan JavaScript -->
                             <img id="profilePreview"
-                                 src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
-                                 alt="Profile photo"
-                                 class="profile-photo">
+                                src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
+                                alt="Profile photo" class="profile-photo">
                         </div>
                         <div class="col-md-10">
-                            <label for="photo" class="btn btn-upload" style="background-color: #343a40; color: #fff;">
+                            <label for="photo" class="btn btn-upload"
+                                style="background-color: #343a40; color: #fff;">
                                 Pilih Foto
                             </label>
-                            <input type="file" id="photo" name="photo" class="form-control d-none" onchange="previewImage(event)">
-                            <p class="text-muted mt-2"><span class="text-danger">*</span> Gambar Profile Anda sebaiknya memiliki rasio 1:1 dan berukuran tidak lebih dari 2MB.</p>
+                            <input type="file" id="photo" name="photo" class="form-control d-none"
+                                onchange="previewImage(event)">
+                            <p class="text-muted mt-2"><span class="text-danger">*</span> Gambar Profile Anda
+                                sebaiknya memiliki rasio 1:1 dan berukuran tidak lebih dari 2MB.</p>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -199,7 +208,7 @@
                 const reader = new FileReader();
 
                 // Ketika file selesai dibaca
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     preview.src = e.target.result; // Ganti src gambar dengan file yang dipilih
                 }
 

@@ -7,7 +7,7 @@
     <title>RECALM Chat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        @vite('resources/sass/app.scss')
+    @vite('resources/sass/app.scss')
 </head>
 
 <body>
@@ -96,11 +96,14 @@
         <div class="container" style="height: 7vh;">
             <p class="mb-1">&copy; 2024 RECALM. All Rights Reserved.</p>
             <ul class="list-inline mb-0">
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Privacy
+                        Policy</a></li>
                 <li class="list-inline-item">|</li>
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Terms of
+                        Service</a></li>
                 <li class="list-inline-item">|</li>
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Contact Us</a>
+                </li>
             </ul>
             <div class="mt-3">
                 <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
@@ -111,8 +114,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
     <script>
         const chatForm = document.getElementById('chat-form');
         const chatInput = document.getElementById('chat-input');
@@ -139,7 +142,8 @@
                 setTimeout(() => {
                     const botMessage = document.createElement('div');
                     botMessage.className = 'd-flex flex-row mb-3';
-                    botMessage.innerHTML = `<div class="p-3 rounded bg-primary text-white">Terima kasih telah berbagi, ada lagi yang bisa aku bantu?</div>`;
+                    botMessage.innerHTML =
+                        `<div class="p-3 rounded bg-primary text-white">Terima kasih telah berbagi, ada lagi yang bisa aku bantu?</div>`;
                     chatArea.appendChild(botMessage);
 
                     // Scroll to the bottom

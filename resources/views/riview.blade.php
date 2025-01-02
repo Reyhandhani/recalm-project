@@ -16,48 +16,51 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ Vite::asset('resources/images/recalm.png') }}" alt="logo-recalm"
-                    style="max-width: 110px; height: auto;">
+                <img src="{{ Vite::asset('resources/images/recalm.png') }}" alt="logo-recalm" style="max-width: 110px; height: auto;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <ul class="navbar-nav ms-auto">
-                <!-- Authentication Links -->
-                @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
-                @else
-                    <li class="nav-item dropdown fw-bold">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
-                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
+                <ul class="navbar-nav ms-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown fw-bold">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
+                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
+                                alt="Profile photo"
+                                class="rounded-circle"
+                                style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
+                                {{ Auth::user()->name }}
+                            </a>
 
-                        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a href="{{ route('home') }}" class="dropdown-item">
-                                Home
-                                <i class="bi-person-circle me-1"></i>
-                            </a>
-                            <a class="dropdown-item text-danger" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
+                            <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{{ route('profile') }}" class="dropdown-item">
+                                    Profile
+                                    <i class="bi-person-circle me-1"></i>
+                                </a>
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"><i
-                                    class="bi bi-lock-fill"></i>
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
-        </div>
+                                        class="bi bi-lock-fill"></i>
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
         </div>
     </nav>
     <!-- Navbar end -->
@@ -69,7 +72,8 @@
                 <h4 class="fw-bold">Pengaturan</h4>
                 <nav class="nav flex-column">
                     <a class="nav-link" href="{{ route('profile') }}"><i class="fas fa-user"></i>Profile</a>
-                    <a class="nav-link" href="{{ route('statistik')}}"><i class="fas fa-chart-bar"></i>Statistik Mood</a>
+                    <a class="nav-link" href="{{ route('statistik') }}"><i class="fas fa-chart-bar"></i>Statistik
+                        Mood</a>
                     <a class="nav-link" href="#"><i class="fas fa-user-cog"></i>Riview Note</a>
                     <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>button opsional</a>
 
@@ -94,7 +98,7 @@
                 <div class="collapse" id="sidebarNav">
                     <nav class="nav flex-column sidebar">
                         <a class="nav-link" href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
-                        <a class="nav-link" href="{{ route('statistik')}}"><i class="fas fa-chart-bar"></i>Statistik
+                        <a class="nav-link" href="{{ route('statistik') }}"><i class="fas fa-chart-bar"></i>Statistik
                             Mood</a>
                         <a class="nav-link" href="#"><i class="fas fa-user-cog"></i>Riview Note</a>
                         <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>button opsional</a>
@@ -110,7 +114,10 @@
                         <div>
                             <h5 class="card-title text-primary fw-bold">SENANG</h5>
                             <h6 class="card-subtitle mb-2 text-muted fw-medium">2025-01-01</h6>
-                            <p class="card-text m-0 fw-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate ......</p>
+                            <p class="card-text m-0 fw-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate ......</p>
                         </div>
                         <div class="btn">
                             <button type="button" class="btn btn-primary mb-3"><i class="fas fa-eye"></i></button>
