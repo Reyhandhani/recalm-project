@@ -97,7 +97,7 @@
                    <a href="{{ route('notes') }}"> <button class="btn btn-primary w-100 py-3">Daily Notes</button></a>
                 </div>
                 <div class="col-12 col-md-6">
-                    <button class="btn btn-primary w-100 py-3">Perlu Teman Cerita?</button>
+                    <a href="{{ route('chat') }}"> <button class="btn btn-primary w-100 py-3">Perlu Teman Cerita?</button></a>
                 </div>
             </div>
         </section>

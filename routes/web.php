@@ -11,7 +11,7 @@ use App\Http\Controllers\NoteController;
 use App\Http\Controllers\RiviewController;
 use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\UserProfileController;
-
+use App\Http\Controllers\ChatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,3 +62,4 @@ Route::post('/profile/update', [UserProfileController::class, 'update'])->middle
 
 Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik');
 Route::get('/riview', [RiviewController::class, 'index'])->name('riview');
+Route::get('/chat', [ChatController::class, 'index'])->name('chat');
