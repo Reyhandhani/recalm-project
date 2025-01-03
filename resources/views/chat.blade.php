@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECALM Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     @vite('resources/sass/app.scss')
@@ -96,22 +97,21 @@
         <div class="container" style="height: 7vh;">
             <p class="mb-1">&copy; 2024 RECALM. All Rights Reserved.</p>
             <ul class="list-inline mb-0">
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Privacy
-                        Policy</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
                 <li class="list-inline-item">|</li>
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Terms of
-                        Service</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
                 <li class="list-inline-item">|</li>
-                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Contact Us</a>
-                </li>
+                <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
             </ul>
             <div class="mt-3">
-                <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                <!-- Social Media Icons -->
+                <a href="#" class="text-white me-3"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-twitter" style="font-size: 1.5rem;"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a>
             </div>
         </div>
     </footer>
+    <!-- Footer end -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
