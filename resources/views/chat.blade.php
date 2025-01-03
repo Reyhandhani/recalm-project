@@ -32,7 +32,7 @@
                         @endif
                     @else
                         <li class="nav-item dropdown fw-bold">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle me-1" href="#"
                                 role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
                                 alt="Profile photo"

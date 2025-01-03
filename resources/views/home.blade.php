@@ -32,7 +32,7 @@
                         @endif
                     @else
                         <li class="nav-item dropdown fw-bold">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle me-1" href="#"
                                 role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
                                 alt="Profile photo"
@@ -88,16 +88,15 @@
         <section>
             <h2 class="mb-3">Mood Hari Ini</h2>
             <div class="row g-3">
-                <!-- Sadly Sad Button -->
-                <div class="col-12">
-                    <button class="btn btn-primary w-100 py-3">Sadly Sad</button>
-                </div>
                 <!-- Other Buttons -->
-                <div class="col-12 col-md-6">
-                   <a href="{{ route('notes') }}"> <button class="btn btn-primary w-100 py-3">Daily Notes</button></a>
+                <div class="col-12 ">
+                   <a href="{{ route('notes') }}"> <button class="btn btn-primary w-100 py-3"><h2><i class="bi bi-journals"></i> Notes</h2></button></a>
                 </div>
                 <div class="col-12 col-md-6">
-                    <a href="{{ route('chat') }}"> <button class="btn btn-primary w-100 py-3">Perlu Teman Cerita?</button></a>
+                   <a href="{{ route('statistik') }}"> <button class="btn btn-primary w-100 py-3"><h2><i class="bi bi-bar-chart"></i> Statistik </h2></button></a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <a href="{{ route('chat') }}"> <button class="btn btn-primary w-100 py-3"><h2><i class="bi bi-chat-dots"></i>  Perlu Teman Cerita?</h2></button></a>
                 </div>
             </div>
         </section>

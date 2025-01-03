@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistik</title>
+    <title>Rewiew Note</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     @vite('resources/sass/app.scss')
@@ -22,7 +22,6 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
                 @guest
@@ -33,7 +32,7 @@
                     @endif
                 @else
                     <li class="nav-item dropdown fw-bold">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle me-1" href="#"
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle  me-1" href="#"
                             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
                             alt="Profile photo"
@@ -41,8 +40,6 @@
                             style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
                             {{ Auth::user()->name }}
                         </a>
-
-
                             <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="{{ route('profile') }}" class="dropdown-item">
                                     Profile
@@ -73,9 +70,9 @@
                 <h4 class="fw-bold">Pengaturan</h4>
                 <nav class="nav flex-column">
                     <a class="nav-link" href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
-                    <a class="nav-link" href="#"><i class="fas fa-chart-bar"></i> Statistik Mood</a>
+                    <a class="nav-link" href="{{ route('statistik') }}"><i class="fas fa-chart-bar"></i> Statistik Mood</a>
                     <a class="nav-link" href="{{ route('review.index') }}"><i class="fas fa-user-cog"></i> Riview Note</a>
-                    <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i> button opsional</a>
+                    <a class="nav-link" href=""><i class="fas fa-graduation-cap"></i> button opsional</a>
                     <a class="nav-link text-danger" href="#"
                         onclick="event.preventDefault(); document.getElementById('logout-form-sidebar').submit();">
                         <i class="fas fa-sign-out-alt"></i> Logout Account
@@ -95,7 +92,7 @@
                 <div class="collapse" id="sidebarNav">
                     <nav class="nav flex-column sidebar">
                         <a class="nav-link" href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
-                        <a class="nav-link" href="#"><i class="fas fa-chart-bar"></i> Statistik Mood</a>
+                        <a class="nav-link" href="{{ route('statistik') }}"><i class="fas fa-chart-bar"></i> Statistik Mood</a>
                         <a class="nav-link" href="{{ route('review.index') }}"><i class="fas fa-user-cog"></i> Review
                             Note</a>
                         <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i> button opsional</a>
@@ -113,15 +110,20 @@
 
             <!-- Content area -->
             <div class="col-md-9 p-4">
-                <h4>Statistik Mood</h4>
+                <h4>Review Notes</h4>
                 <hr>
-                <div class="card border border-primary mb-5">
-                    <div class="card-body">
-                        <div class="chart-container" style="position: relative; height:50vh; width:100%;">
-                            {!! $chart->container() !!}
+                @foreach ($notes as $note)
+                <div class="card border border-primary mb-2">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title text-primary fw-bold">{{ $note->Mood }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted fw-medium">{{ $note->created_at->format('Y-m-d') }}</h6>
+                            <p class="card-text m-0 fw-medium">{{ Str::limit($note->Note, 150) }}...</p>
                         </div>
+
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -141,8 +143,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ $chart->cdn() }}"></script>
-    {{ $chart->script() }}
 </body>
 
 </html>

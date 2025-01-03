@@ -33,17 +33,12 @@
                     @endif
                 @else
                     <li class="nav-item dropdown fw-bold">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle me-1" href="#"
                             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
-<<<<<<< HEAD
+
                                 alt="Profile photo" class="rounded-circle"
                                 style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
-=======
-                            alt="Profile photo"
-                            class="rounded-circle"
-                            style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
->>>>>>> origin/fitur-profile
                             {{ Auth::user()->name }}
                         </a>
 
@@ -79,7 +74,7 @@
                     <a class="nav-link" href="#"><i class="fas fa-user"></i>Profile</a>
                     <a class="nav-link" href="{{ route('statistik') }}"><i class="fas fa-chart-bar"></i>Statistik
                         Mood</a>
-                    <a class="nav-link" href="{{ route('riview') }}"><i class="fas fa-user-cog"></i>Riview Note</a>
+                    <a class="nav-link" href="{{ route('review.index') }}"><i class="fas fa-user-cog"></i>Review Note</a>
                     <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>button opsional</a>
 
 
@@ -106,9 +101,9 @@
                         <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
                         <a class="nav-link" href="{{ route('statistik') }}"><i class="fas fa-id-card"></i>Statistik
                             Mood</a>
-                        <a class="nav-link" href="{{ route('riview') }}"><i class="fas fa-user-cog"></i>Riview note</a>
+                        <a class="nav-link" href="{{ route('review.index') }}"><i class="fas fa-user-cog"></i>Review note</a>
                         <a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>button opsional</a>
-                        <a class="nav-link" href="#"><i class="fas fa-id-card"></i>Statistik Mood</a>
+
 
                         <!-- Tombol Logout -->
                         <a class="nav-link text-danger" href="#"
@@ -147,14 +142,10 @@
                         <div class="col-md-2">
                             <!-- Tambahkan ID 'profilePreview' untuk mengganti gambar dengan JavaScript -->
                             <img id="profilePreview"
-<<<<<<< HEAD
+
                                 src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
                                 alt="Profile photo" class="profile-photo">
-=======
-                                 src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images\default_profile.png') }}"
-                                 alt="Profile photo"
-                                 class="profile-photo">
->>>>>>> origin/fitur-profile
+
                         </div>
                         <div class="col-md-10">
                             <label for="photo" class="btn btn-upload"
