@@ -3,11 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-<<<<<<< HEAD
-        'reference' => 'fec70538352dff83c71f70f1b2bfdeb730e11b7b',
-=======
-        'reference' => 'a150ad3771e0dc63e6a894862d224ca771c6d5c0',
->>>>>>> origin/fitur-profile
+        'reference' => '65478fcbde493a68cc69a689581c9c8f97eef34c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(
@@ -397,11 +393,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-<<<<<<< HEAD
-            'reference' => 'fec70538352dff83c71f70f1b2bfdeb730e11b7b',
-=======
-            'reference' => 'a150ad3771e0dc63e6a894862d224ca771c6d5c0',
->>>>>>> origin/fitur-profile
+            'reference' => '65478fcbde493a68cc69a689581c9c8f97eef34c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(
@@ -787,8 +779,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -839,6 +831,15 @@
             'reference' => '91039bc1faa45ba123c4328958e620d382ec7088',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ramsey/uuid',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'realrashid/sweet-alert' => array(
+            'pretty_version' => 'v7.2.0',
+            'version' => '7.2.0.0',
+            'reference' => '7890f3d3a0f45ea65b90300a823681a99a1d2dd6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../realrashid/sweet-alert',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

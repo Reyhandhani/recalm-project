@@ -12,6 +12,7 @@ use App\Http\Controllers\RiviewController;
 use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +31,10 @@ Route::get('/', function () {
 
 Route::get('home', [HomeController::class, 'index'])->name('home');
 
-Route::get('profile', ProfileController::class)->name('profile');
+Route::get('statistik', [StatistikController::class, 'index'])->name('statistik');
+
+Route::get('profile', ProfileController::class)->middleware('auth')->name('profile');
+
 
 Auth::routes();
 
@@ -39,6 +43,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/notes', [App\Http\Controllers\HomeController::class, 'notes'])->name('notes');
 
 Route::post('/notes', [NoteController::class, 'store'])->name('note.store');
+
 
 Route::post('/store', [App\Http\Controllers\HomeController::class, 'store']);
 
@@ -61,5 +66,7 @@ Route::post('/profile/update', [UserProfileController::class, 'update'])->name('
 Route::post('/profile/update', [UserProfileController::class, 'update'])->middleware('auth')->name('profile.update');
 
 Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik');
-Route::get('/riview', [RiviewController::class, 'index'])->name('riview');
-Route::get('/chat', [ChatController::class, 'index'])->name('chat');
+
+Route::get('/chat', [ChatController::class, 'index'])->name('chat')->middleware('auth');
+
+Route::get('/review', [ReviewController::class, 'index'])->name('review.index')->middleware('auth');

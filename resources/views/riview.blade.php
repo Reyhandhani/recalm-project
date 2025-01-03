@@ -23,26 +23,6 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-<<<<<<< HEAD
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown fw-bold">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
-                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
-                                alt="Profile photo"
-                                class="rounded-circle"
-                                style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
-                                {{ Auth::user()->name }}
-                            </a>
-=======
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
                 @guest
@@ -61,7 +41,7 @@
                             style="width: 30px; height: 30px; object-fit: cover; margin-right: 5px;">
                             {{ Auth::user()->name }}
                         </a>
->>>>>>> origin/fitur-profile
+
 
                             <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="{{ route('profile') }}" class="dropdown-item">

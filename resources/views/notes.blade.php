@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     @vite('resources/sass/app.scss')
+
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                         @endif
                     @else
                         <li class="nav-item dropdown fw-bold">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle bi-person-circle me-1" href="#"
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle me-1" href="#"
                                 role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : asset('images/default_profile.png') }}"
                                 alt="Profile photo"
@@ -73,23 +74,22 @@
                     <form action="{{ route('note.store') }}" method="POST">
                         @csrf
                         <div class="mb-3 text-center">
-                            <label for="note" class="form-label" style="font-size: 30px"><b>Ceritain Hari
-                                    Kamu</b></label>
-                            <textarea class="form-control" id="note-field" name="note-field" rows="10"
+                            <label for="note" class="form-label" style="font-size: 30px"><b>Ceritain Hari Kamu</b></label>
+                            <textarea class="form-control text-area" id="note-field" name="note-field" rows="10"
                                 placeholder="Silahkan apa yang kamu rasakan hari ini" style="font-size: 20px"></textarea>
                             <!--MOOD-->
                             <br>
                             <label for="mood" style="font-size: 20px"><b> Mood</b></label>
                             <select name="mood" id="mood" class="form-control"
                                 style="font-size: 20px; height: 60px;">
-                                <option value="Sedih">Sedih</option>
-                                <option value="Senang">Senang</option>
-                                <option value="Marah">Marah</option>
+                                <option value="Sedih"> &#128557; Sedih</option>
+                                <option value="Senang">&#128515; Senang</option>
+                                <option value="Marah">&#128545; Marah</option>
                             </select>
                             <div id="emailHelp" class="form-text" style="font-size:15px">Tenang.. Cerita kamu bakal aman
                                 kok!</div>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100" style="font-size:25px;">Simpan
+                        <button type="submit" class="btn btn-primary w-100 btn-sumbit" style="font-size:25px;">Simpan
                             Catatan</button>
                     </form>
                 </div>

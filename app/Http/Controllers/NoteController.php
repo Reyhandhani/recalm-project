@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\notes;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Note;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class NoteController extends Controller
@@ -48,6 +49,7 @@ class NoteController extends Controller
         $note->save();
 
 
+
         return redirect()->route('home')->with('success', 'Data berhasil disimpan!');
     }
 
@@ -57,7 +59,7 @@ class NoteController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
@@ -65,7 +67,7 @@ class NoteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
@@ -81,6 +83,6 @@ class NoteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
     }
 }
