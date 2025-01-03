@@ -6,3 +6,73 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#gray{
+background-color: rgb(62, 62, 62)!important;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Isi ruang kosong untuk mendorong footer ke bawah */
+}
+
+footer {
+    margin-top: auto; /* Pastikan footer selalu berada di bawah */
+}
+
+.sidebar {
+    padding: 40px;
+    height: 100vh;
+}
+
+.sidebar a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    font-size: 17px;
+}
+
+.sidebar a:hover {
+    color: #007bff;
+}
+
+.sidebar a.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.sidebar i {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+        padding: 0;
+    }
+}
+
+.fixed-image {
+    width: 100%; /* Gambar mengisi lebar kartu */
+    height: 200px; /* Tinggi tetap untuk semua gambar */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+    object-position: center; /* Fokus gambar tetap di tengah */
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+}
